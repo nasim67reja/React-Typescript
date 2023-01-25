@@ -1,125 +1,46 @@
-# Typescript Basics
+# Getting Started with Create React App
 
-## how to install typescript into your computer
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- first npm init -y
-- then , npm i typescript
-- then npx tsc {filename}
+## Available Scripts
 
-## Basics
+In the project directory, you can run:
 
-```ts
-// Primitives : number,string,boolean
-// More complex types : Arrays,objects
-// Function types, parameteres
+### `npm start`
 
-// type number
-let age: number; //Number is pointed js object not the type
-age = 23;
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-// type string
-let userName: string;
-userName = "Nasim Reja";
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-// Boolean
+### `npm test`
 
-let isStudent: boolean;
-isStudent = true;
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-**_so number,string,boolean are the basic premitive data type of javascript_**
+### `npm run build`
 
-## Complex data type (array,objects)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```ts
-/// More Complex types
-// array
-let hobbies: string[]; // array of string. the type also could be number and boolean
-hobbies = ["Reading Book", "Sports"];
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-// Objects
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-// let person: any; // This is allow us to assign any type of data. but it violate the main purpose of using typescripts
-// using objects for specific data we can create an object like this
-let person: {
-  name: string;
-  age: number;
-};
-person = {
-  name: "Nasim Reja",
-  age: 25,
-};
+### `npm run eject`
 
-// Array of objects
-let people: {
-  name: string;
-  age: number;
-}[];
-people = [
-  {
-    name: "Nasim Reja",
-    age: 25,
-  },
-  {
-    name: "adil",
-    age: 22,
-  },
-];
-```
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-## Type inference
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-- here we could ignore the type declaration
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-```ts
-let practice = "Practice basics of typescript";
-// practice=12;//it's not work
-```
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Union type
+## Learn More
 
-- it allows us to write multiple data store variable
-- union types is a type definition that allows us to more than one type
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-```ts
-let practice1: string | number = "Practice basics of typescript";
-
-// now we can assign number to this variable
-practice1 = 12;
-```
-
-## Type Aliases
-
-```ts
-type Person = {
-  name: string;
-  age: number;
-};
-let alPerson: Person;
-alPerson = {
-  name: "x",
-  age: 12,
-};
-
-// or we could write Person of array
-let arrPerson: Person[];
-```
-
-## Functions and Functions Type
-
-- we also need to declare the funtion return data type
-- here we also could get the benefit of type inference and union type
-
-```ts
-function add(a: number, b: number): number | string {
-  return a + b;
-}
-```
-
-- no return value just printing
-
-```ts
-function printOutput(value: any /* because we want just print*/): void {
-  console.log(value);
-}
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
