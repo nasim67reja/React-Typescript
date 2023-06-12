@@ -123,3 +123,46 @@ function printOutput(value: any /* because we want just print*/): void {
   console.log(value);
 }
 ```
+
+## Generics
+
+```ts
+const addId = (obj: object) => {
+  let id = Math.floor(Math.random() * 100);
+  return { ...obj, id };
+};
+let user = addId({
+  name: "mash",
+  age: 40,
+  country: "Bangladeshi",
+});
+```
+
+here user object does not know the exact value of obj. if we define the obj type or declare like a variable then user will know about the parameter
+
+```ts
+const addId = <T>(obj: T) => {
+  let id = Math.floor(Math.random() * 100);
+  return { ...obj, id };
+};
+let user = addId({
+  name: "mash",
+  age: 40,
+  country: "Bangladeshi",
+});
+```
+
+we can recive type generic way like variable
+
+```ts
+const addId = <T extends object>(obj: T) => {
+  // T must be object
+  let id = Math.floor(Math.random() * 100);
+  return { ...obj, id };
+};
+let user = addId({
+  name: "mash",
+  age: 40,
+  country: "Bangladeshi",
+});
+```

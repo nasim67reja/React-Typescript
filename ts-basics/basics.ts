@@ -92,3 +92,23 @@ function printOutput(value: any /* because we want just print*/): void {
 }
 
 // Diving into Generics
+
+// const addId = (obj: object) => {
+//   let id = Math.floor(Math.random() * 100);
+//   return { ...obj, id };
+// };
+// let user = addId({
+//   name: "mash",
+//   age: 40,
+//   country: "Bangladeshi",
+// });
+
+const addId = <T>(obj: T) => {
+  let id = Math.floor(Math.random() * 100);
+  return { ...obj, id };
+};
+let user = addId({
+  name: "mash",
+  age: 40,
+  country: "Bangladeshi",
+});
